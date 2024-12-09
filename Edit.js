@@ -31,7 +31,7 @@ const Edit = ({ navigation, route }) => {
                     value={newGrade}
                     style={{ borderWidth: 1, padding: 5 }}
                     maxLength={1} // Restrict to 1 character
-                    onChangeText={(text) => setNewGrade(text.toUpperCase())} // Ensure upper case
+                    onChangeText={(text) => setNewGrade(text.toUpperCase())}
                 />
             </View>
 

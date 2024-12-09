@@ -5,7 +5,6 @@ import { datasource } from './Data.js';
 const Add = ({ navigation }) => {
     const [moduleCode, setModuleCode] = useState('');
     const [grade, setGrade] = useState('');
-    const [credit, setCredit] = useState('');
 
     const gradeToGPA = {
         A: 4,
@@ -15,9 +14,8 @@ const Add = ({ navigation }) => {
         F: 0,
     };
 
-    // Handle form submission
     const handleSubmit = () => {
-        // Validate module code (4 alphanumeric characters)
+
         const moduleCodeRegex = /^[A-Za-z0-9]{4}$/;
         if (!moduleCode || !moduleCodeRegex.test(moduleCode)) {
             Alert.alert('Invalid Module Code', 'Please enter a valid 4-letter or number module code.');
@@ -50,7 +48,7 @@ const Add = ({ navigation }) => {
                 <TextInput
                     style={{ borderWidth: 1, padding: 5 }}
                     value={moduleCode}
-                    onChangeText={(text) => setModuleCode(text)}
+                    onChangeText={(text) => setModuleCode(text.toUpperCase)}
                     maxLength={4}
                 />
             </View>
